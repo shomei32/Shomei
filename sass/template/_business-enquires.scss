@@ -1,0 +1,95 @@
+section.business-enquires {
+  .card {
+    border-radius: 4px;
+    box-shadow: 0 8px 20px 0 rgba(224, 224, 224, 0.5);
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (min-width: 768px) {
+      padding: 20px 45px 35px 45px;
+    }
+
+    @media (min-width: 1024px) {
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .content {
+      width: 100%;
+      margin-bottom: 30px;
+
+      @media (min-width: 1024px) {
+        max-width: 455px;
+      }
+
+      h1 {
+        color: $secondary;
+        font-family: $open-sans;
+        font-size: 28px;
+        line-height: 38px;
+        margin-bottom: 25px;
+
+        @media (min-width: 768px) {
+          font-size: 48px;
+          line-height: 62px;
+        }
+      }
+
+      ul {
+        li {
+          margin-top: 20px;
+          font-family: $open-sans;
+          color: $secondary;
+          font-size: 18px;
+          line-height: 28px;
+
+          a {
+            color: $primary;
+          }
+
+          &:first-of-type {
+            margin-top: 0;
+          }
+
+          span {
+            display: inline-block;
+            margin-right: 15px;
+            width: 100%;
+
+            @media (min-width: 568px) {
+              max-width: 170px;
+            }
+          }
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+        background-color: $primary;
+        color: $white;
+        padding: 20px;
+        border-radius: 4px;
+
+        @media (min-width: 768px) {
+          padding: 20px 45px 35px 45px;
+        }
+
+        h1 {
+          color: $white;
+        }
+
+        ul {
+          li {
+            color: $white;
+
+            a {
+              color: #b2bce0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

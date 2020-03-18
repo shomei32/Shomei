@@ -1,0 +1,113 @@
+section.people {
+  padding: 0 0;
+
+  .person {
+    border-bottom: 1px solid #b2bce0;
+    padding: 80px 0;
+
+    @media (min-width: 1024px) {
+      &:nth-of-type(2n) {
+        .image {
+          order: 2;
+        }
+
+        .content {
+          order: 1;
+        }
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+
+      @media (min-width: 1024px) {
+        justify-content: space-between;
+      }
+    }
+
+    .image {
+      width: 150px;
+      height: 200px;
+      background-color: $secondary;
+      border-radius: 4px;
+      box-shadow: 0 8px 20px 0 rgba(224, 224, 224, 0.5);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @media (min-width: 1024px) {
+        width: 360px;
+        height: 420px;
+      }
+    }
+
+    .content {
+      margin-top: 30px;
+      width: 100%;
+
+      @media (min-width: 1024px) {
+        width: calc(100% - 410px);
+        margin-top: 0;
+      }
+
+      .name {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        span {
+          display: inline-block;
+          color: $primary;
+          font-size: 32px;
+          line-height: 42px;
+          font-family: $scada;
+          font-weight: bold;
+          margin-right: 25px;
+
+          @media (min-width: 768px) {
+            font-size: 52px;
+            line-height: 62px;
+          }
+        }
+
+        .social {
+          display: inline-block;
+          width: 100%;
+          margin-top: 15px;
+
+          @media (min-width: 768px) {
+            width: auto;
+            margin-top: 0;
+          }
+
+          i {
+            font-size: 36px;
+            color: #b2bce0;
+          }
+        }
+      }
+
+      .bio {
+        margin-top: 28px;
+
+        p {
+          font-family: $open-sans;
+          color: $secondary;
+          font-size: 18px;
+          line-height: 28px;
+          margin-top: 20px;
+
+          &:first-of-type {
+            margin-top: 0;
+          }
+
+          @media (min-width: 768px) {
+            font-size: 22px;
+            line-height: 32px;
+          }
+        }
+      }
+    }
+  }
+}

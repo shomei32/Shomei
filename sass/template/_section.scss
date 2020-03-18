@@ -1,0 +1,44 @@
+section {
+  border-bottom: 1px solid #b2bce0;
+  padding: 60px 0 100px 0;
+
+  .title {
+    margin-bottom: 40px;
+
+    .container {
+      max-width: 1000px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h1 {
+      max-width: 930px;
+      font-family: $scada;
+      color: $primary;
+      font-weight: bold;
+      font-size: 38px;
+      line-height: 48px;
+
+      @media (min-width: 768px) {
+        font-size: 52px;
+        line-height: 62px;
+      }
+    }
+
+    p {
+      margin-top: 25px;
+      font-size: 18px;
+      line-height: 28px;
+      color: $secondary;
+      font-family: $open-sans;
+
+      @media (min-width: 768px) {
+        margin-top: 40px;
+        font-size: 22px;
+        line-height: 32px;
+      }
+    }
+  }
+}

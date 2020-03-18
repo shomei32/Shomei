@@ -1,0 +1,149 @@
+nav {
+  background-color: rgba($white, 0.9);
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 8px 20px 0 rgba(224, 224, 224, 0.5);
+  @include transition(all 0.4s ease);
+  padding: 20px 0;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .logo {
+    display: inline-block;
+    flex-grow: 1;
+
+    a {
+      display: inline-block;
+      width: 170px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .burger {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      position: absolute;
+      top: -99999px;
+      left: -99999px;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    span {
+      @include burger(25px, 3px, 5px, $secondary);
+    }
+  }
+
+  ul {
+    position: fixed;
+    top: 86px;
+    right: 0;
+    width: 270px;
+    height: calc(100% - 86px);
+    background-color: rgba($white, 0.8);
+    padding-top: 15px;
+    @include transform(translateX(280px));
+    @include transition(all 0.4s ease);
+
+    @media (min-width: 1024px) {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: auto;
+      height: auto;
+      @include transform(translateX(0px));
+      @include transition(all 0s ease);
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 0;
+      background-color: transparent;
+    }
+
+    li {
+      border-bottom: 1px solid #b2bce0;
+
+      @media (min-width: 1024px) {
+        border-bottom-width: 0;
+        margin-right: 70px;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      a {
+        display: block;
+        padding: 20px 25px;
+        font-family: $scada;
+        color: $secondary;
+        font-weight: bold;
+        font-size: 22px;
+        @include transition(all 0.4s ease);
+
+        &:hover {
+          color: lighten($secondary, 10%);
+        }
+
+        &.active {
+          color: $primary;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          padding: 0;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &.active {
+    background-color: rgba($white, 0.95);
+
+    .burger {
+      span {
+        @include burger-to-cross;
+      }
+    }
+
+    ul {
+      @include transform(translateX(0px));
+      background-color: rgba($white, 0.95);
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($secondary, 0.4);
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  @include transition(all 0.3s ease);
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
